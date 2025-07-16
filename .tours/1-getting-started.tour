@@ -269,7 +269,7 @@
     {
       "file": "parts/1-getting-started/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to insert the code for *Program.cs*. Then select **Next**.\n\n```csharp\nusing ContosoPizza.Data;\nusing ContosoPizza.Models;\n\nusing ContosoPizzaContext context = new ContosoPizzaContext();\n\nProduct veggieSpecial = new Product()\n{\n    Name = \"Veggie Special Pizza\",\n    Price = 9.99M\n};\ncontext.Products.Add(veggieSpecial);\n\nProduct deluxeMeat = new Product()\n{\n    Name = \"Deluxe Meat Pizza\",\n    Price = 12.99M\n};\ncontext.Add(deluxeMeat);\n\ncontext.SaveChanges();\n```",
-      "line": 41,
+      "line": 60,
       "selection": {
         "start": {
           "line": 1,
