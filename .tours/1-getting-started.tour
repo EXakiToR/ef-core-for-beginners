@@ -436,7 +436,7 @@
     {
       "file": "parts/1-getting-started/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to insert the \"update\" code. Then select **Next**.\n```csharp\n\nvar veggieSpecial = context.Products\n                       .Where(p => p.Name == \"Veggie Special Pizza\")\n                       .FirstOrDefault();\n\nif (veggieSpecial is Product)\n{\n    veggieSpecial.Price = 10.99M;\n}\n\ncontext.SaveChanges();\n\n```",
-      "line": 5,
+      "line": 27,
       "title": "Update an entity",
       "selection": {
         "start": {

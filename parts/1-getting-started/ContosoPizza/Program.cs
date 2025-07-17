@@ -8,6 +8,14 @@ var products = from product in context.Products
                orderby product.Name
                select product;
 
+var veggieSpecial = context.Products
+                       .Where(p => p.Name == "Veggie Special Pizza")
+                       .FirstOrDefault();
+
+if (veggieSpecial is Product)
+{
+    veggieSpecial.Price = 10.99M;
+}
 
 foreach (Product p in products)
 {
@@ -16,3 +24,5 @@ foreach (Product p in products)
     Console.WriteLine($"Price: {p.Price}");
     Console.WriteLine(new string('-', 20));
 }
+
+context.SaveChanges();
