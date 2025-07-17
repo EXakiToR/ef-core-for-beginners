@@ -400,7 +400,7 @@
     {
       "file": "parts/1-getting-started/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to replace the selected code. Then select **Next**.\n\n```csharp\nvar products = from product in context.Products\n               where product.Price > 10.00M\n               orderby product.Name\n               select product;\n```",
-      "line": 14,
+      "line": 17,
       "selection": {
         "start": {
           "line": 6,
