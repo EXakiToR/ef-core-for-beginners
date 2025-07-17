@@ -12,16 +12,26 @@ var veggieSpecial = context.Products
                        .Where(p => p.Name == "Veggie Special Pizza")
                        .FirstOrDefault();
 
+var pizza = context.Products
+                        .Where(p => p.Name == "Deluxe Meat Pizza")
+                        .FirstOrDefault();
 
-if (veggieSpecial is Product)
+
+if (pizza is not null)
 {
-    veggieSpecial.Price = 10.99M;
+    context.Remove(pizza);
 }
 
-if (veggieSpecial is not null)
-{
-    context.Remove(veggieSpecial);
-}
+// if (veggieSpecial is Product)
+// {
+//     veggieSpecial.Price = 10.99M;
+// }
+
+// if (veggieSpecial is not null)
+// {
+//     context.Remove(veggieSpecial);
+// }
+
 
 foreach (Product p in products)
 {
