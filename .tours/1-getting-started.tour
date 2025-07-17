@@ -353,7 +353,7 @@
     {
       "file": "parts/1-getting-started/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to replace the selected code. Then select **Next**.\n\n```csharp\nvar products = context.Products\n                    .Where(p => p.Price > 10.00M)\n                    .OrderBy(p => p.Name);\n\n\nforeach (Product p in products)\n{\n   Console.WriteLine($\"Id:    {p.Id}\");\n   Console.WriteLine($\"Name:  {p.Name}\");\n   Console.WriteLine($\"Price: {p.Price}\");\n   Console.WriteLine(new string('-', 20));\n}\n```",
-      "line": 44,
+      "line": 77,
       "selection": {
         "start": {
           "line": 6,
@@ -400,7 +400,7 @@
     {
       "file": "parts/1-getting-started/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to replace the selected code. Then select **Next**.\n\n```csharp\nvar products = from product in context.Products\n               where product.Price > 10.00M\n               orderby product.Name\n               select product;\n```",
-      "line": 11,
+      "line": 14,
       "selection": {
         "start": {
           "line": 6,

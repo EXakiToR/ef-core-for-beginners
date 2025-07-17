@@ -1,20 +1,17 @@
 ﻿using ContosoPizza.Data;
 using ContosoPizza.Models;
 
-using ContosoPizzaContext context = new ContosoPizzaContext();
+using ContosoPizzaContext context = new();
 
-Product veggieSpecial = new Product()
+var products = context.Products
+                    .Where(p => p.Price > 10.00M)
+                    .OrderBy(p => p.Name);
+
+
+foreach (Product p in products)
 {
-    Name = "Veggie Special Pizza",
-    Price = 9.99M
-};
-context.Products.Add(veggieSpecial);
-
-Product deluxeMeat = new Product()
-{
-    Name = "Deluxe Meat Pizza",
-    Price = 12.99M
-};
-context.Add(deluxeMeat);
-
-context.SaveChanges();
+    Console.WriteLine($"Id:    {p.Id}");
+    Console.WriteLine($"Name:  {p.Name}");
+    Console.WriteLine($"Price: {p.Price}");
+    Console.WriteLine(new string('-', 20));
+}
