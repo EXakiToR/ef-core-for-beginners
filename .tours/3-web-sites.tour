@@ -57,13 +57,13 @@
     {
       "file": "parts/3-web-sites/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to insert the code that configures the `DbContext` in the dependency injection container. Then select **Next**.\n\n```csharp\nbuilder.Services.AddDbContext<ContosoPizzaContext>(options =>\n    options.UseSqlServer(builder.Configuration.GetConnectionString(\"ContosoPizza\")));\n    \n```",
-      "line": 7,
+      "line": 9,
       "title": "Program.cs"
     },
     {
       "file": "parts/3-web-sites/ContosoPizza/Program.cs",
       "description": "Select **Insert Code** below to insert the `using` declarations that resolve the code you just added. Then select **Next**.\n\n```csharp\nusing ContosoPizza.Data;\nusing Microsoft.EntityFrameworkCore;\n \n \n```",
-      "line": 1,
+      "line": 4,
       "title": "Program.cs (continued)"
     },
     {

@@ -1,9 +1,14 @@
+using ContosoPizza.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
+builder.Services.AddDbContext<ContosoPizzaContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ContosoPizza")));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
