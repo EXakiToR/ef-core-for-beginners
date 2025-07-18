@@ -1,4 +1,3 @@
-#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Data;
 using ContosoPizza.Models;
 
-namespace ContosoPizza.Pages.Products
+namespace ContosoPizza.Pages_Products
 {
     public class EditModel : PageModel
     {
@@ -22,7 +21,7 @@ namespace ContosoPizza.Pages.Products
         }
 
         [BindProperty]
-        public Product Product { get; set; }
+        public Product Product { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,17 +30,17 @@ namespace ContosoPizza.Pages.Products
                 return NotFound();
             }
 
-            Product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (Product == null)
+            var product =  await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
             {
                 return NotFound();
             }
+            Product = product;
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see https://aka.ms/RazorPagesCRUD.
+        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)

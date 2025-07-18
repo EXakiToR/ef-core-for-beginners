@@ -1,2 +1,3 @@
 {
+    "dotnet.defaultSolution": "ef-core-for-beginners.sln"
 }

@@ -1,4 +1,3 @@
-#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Data;
 using ContosoPizza.Models;
 
-namespace ContosoPizza.Pages.Products
+namespace ContosoPizza.Pages_Products
 {
     public class IndexModel : PageModel
     {
@@ -20,7 +19,7 @@ namespace ContosoPizza.Pages.Products
             _context = context;
         }
 
-        public IList<Product> Product { get;set; }
+        public IList<Product> Product { get;set; } = default!;
 
         public async Task OnGetAsync()
         {

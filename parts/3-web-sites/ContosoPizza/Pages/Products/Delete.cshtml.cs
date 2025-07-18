@@ -1,4 +1,3 @@
-#nullable disable
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ContosoPizza.Data;
 using ContosoPizza.Models;
 
-namespace ContosoPizza.Pages.Products
+namespace ContosoPizza.Pages_Products
 {
     public class DeleteModel : PageModel
     {
@@ -21,7 +20,7 @@ namespace ContosoPizza.Pages.Products
         }
 
         [BindProperty]
-        public Product Product { get; set; }
+        public Product Product { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,13 +29,16 @@ namespace ContosoPizza.Pages.Products
                 return NotFound();
             }
 
-            Product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
+            var product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Product == null)
+            if (product is not null)
             {
-                return NotFound();
+                Product = product;
+
+                return Page();
             }
-            return Page();
+
+            return NotFound();
         }
 
         public async Task<IActionResult> OnPostAsync(int? id)
@@ -46,10 +48,10 @@ namespace ContosoPizza.Pages.Products
                 return NotFound();
             }
 
-            Product = await _context.Products.FindAsync(id);
-
-            if (Product != null)
+            var product = await _context.Products.FindAsync(id);
+            if (product != null)
             {
+                Product = product;
                 _context.Products.Remove(Product);
                 await _context.SaveChangesAsync();
             }
