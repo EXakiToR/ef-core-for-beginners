@@ -10,7 +10,7 @@ namespace ContosoPizza.Data
     {
         public ContosoPizzaContext()
         {
- 
+
         }
 
         public ContosoPizzaContext(DbContextOptions<ContosoPizzaContext> options)
@@ -29,7 +29,7 @@ namespace ContosoPizza.Data
             // Secure connection string guidance: https://aka.ms/ef-core-connection-strings
             // 
             // optionsBuilder.UseSqlServer("Connection String Here");
-
+            optionsBuilder.UseSqlite("Data Source=ContosoPizza.db");
 
         }
 
